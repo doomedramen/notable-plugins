@@ -1,0 +1,9 @@
+{
+  "id": "random-note",
+  "name": "Random note",
+  "version": "1.0.0",
+  "description": "Opens a random note from the vault.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}

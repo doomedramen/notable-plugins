@@ -1,0 +1,9 @@
+{
+  "id": "copy-note-link",
+  "name": "Copy note link",
+  "version": "1.0.0",
+  "description": "Copies a wiki link to the active note.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}

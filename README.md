@@ -42,3 +42,11 @@ python3 scripts/build_registry.py
 ```
 
 The generated files are written to `dist/`.
+
+## Current plugins
+
+- **Copy note link** - copies a wiki link to the active note
+- **Daily notes** - opens or creates today's note
+- **Insert date and time** - inserts local date/time values from commands
+- **Random note** - opens a random vault note
+- **Reading time** - estimates reading time in the status bar

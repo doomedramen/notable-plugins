@@ -1,0 +1,9 @@
+{
+  "id": "insert-date-time",
+  "name": "Insert date and time",
+  "version": "1.0.0",
+  "description": "Adds commands for inserting the local date, time, or timestamp.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}

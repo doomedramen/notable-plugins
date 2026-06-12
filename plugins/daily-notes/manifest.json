@@ -1,0 +1,9 @@
+{
+  "id": "daily-notes",
+  "name": "Daily notes",
+  "version": "1.0.0",
+  "description": "Creates or opens a note for today in a configurable folder.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}
