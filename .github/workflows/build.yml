@@ -1,0 +1,44 @@
+name: Build and publish plugins
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build plugin sources
+        run: |
+          set -euo pipefail
+          for directory in plugins/*/; do
+            [ -f "${directory}package.json" ] || continue
+            npm --prefix "$directory" ci
+            npm --prefix "$directory" run build
+          done
+
+      - name: Package plugins and generate registry
+        env:
+          RELEASE_TAG: plugins-latest
+        run: python3 scripts/build_registry.py
+
+      - name: Publish rolling release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create plugins-latest \
+            --prerelease \
+            --title "Community plugins - latest build" \
+            --notes "Automatically built from the latest commit on main." \
+            2>/dev/null || true
+          gh release upload plugins-latest dist/* --clobber

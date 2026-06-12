@@ -1,0 +1,9 @@
+{
+  "id": "reading-time",
+  "name": "Reading time",
+  "version": "1.0.0",
+  "description": "Shows the estimated reading time for the open note.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}
