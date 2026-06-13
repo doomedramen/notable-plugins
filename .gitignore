@@ -1,3 +1,6 @@
 dist/
 node_modules/
 .DS_Store
+
+# Plugin build output (TypeScript sources live in plugins/*/src)
+/plugins/*/main.js

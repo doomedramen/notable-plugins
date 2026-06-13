@@ -1,12 +1,10 @@
 {
-  "name": "notable-icons-tabler",
+  "name": "notable-plugin-theme-dracula",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build.mjs"
-  },
-  "dependencies": {
-    "@iconify-json/tabler": "1.2.35"
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "devDependencies": {
     "@codemirror/autocomplete": "^6.20.3",

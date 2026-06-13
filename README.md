@@ -17,6 +17,31 @@ artifacts to the rolling `plugins-latest` GitHub release.
 4. Include `author` and `homepage` in the manifest.
 5. Open a pull request.
 
+### TypeScript plugins
+
+Plugins are written in TypeScript against the types in
+[`types/notable-plugin-api.d.ts`](types/notable-plugin-api.d.ts) (a vendored
+copy of `frontend/src/plugin-api/index.ts` from the `doomedramen/notable`
+repository — refresh it with `scripts/sync-plugin-api-types.sh` when the host
+API changes).
+
+Each plugin has:
+
+- `src/main.ts` - the plugin source, importing types from
+  `notable-plugin-api`
+- `tsconfig.json` - extends the shared `tsconfig.base.json` and maps
+  `notable-plugin-api` to the vendored types
+- `package.json` / `build.mjs` - `npm run build` type-checks `src/main.ts`
+  and bundles it to `main.js` with esbuild, marking `@codemirror/*` and `yjs`
+  external (same convention as Notable core plugins — read shared host
+  modules from `api.modules` rather than bundling your own)
+
+`manifest.json` still points `entry` at `main.js`. Built `main.js` files are
+git-ignored; CI builds them (`npm --prefix plugins/<id> ci && npm --prefix
+plugins/<id> run build`) before packaging. The packaged `.tar.gz` excludes
+`src/`, `tsconfig.json`, `package.json`, `package-lock.json`, and `build.mjs`
+— only the bundled `entry` and runtime assets ship.
+
 Minimal manifest:
 
 ```json

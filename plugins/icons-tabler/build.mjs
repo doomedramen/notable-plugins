@@ -1,6 +1,8 @@
 import { writeFile } from "node:fs/promises";
+import * as esbuild from "esbuild";
 import { icons } from "@iconify-json/tabler";
 import mapping from "./mapping.json" with { type: "json" };
+import { buildPlugin } from "../../scripts/build-plugin.mjs";
 
 const output = {};
 for (const [id, icon] of Object.entries(icons.icons)) {
@@ -21,3 +23,5 @@ await writeFile(
   new URL("./pack.json", import.meta.url),
   `${JSON.stringify({ icons: output })}\n`
 );
+
+await buildPlugin(esbuild);

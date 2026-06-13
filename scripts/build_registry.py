@@ -17,7 +17,19 @@ REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "doomedramen/notable-plugins")
 RELEASE_TAG = os.environ.get("RELEASE_TAG", "plugins-latest")
 ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
 VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
-EXCLUDED_PARTS = {".git", "dist", "node_modules", "__pycache__"}
+EXCLUDED_PARTS = {
+    ".git",
+    "dist",
+    "node_modules",
+    "__pycache__",
+    # TypeScript build inputs - only the bundled `entry` ships.
+    "src",
+    "tsconfig.json",
+    "package.json",
+    "package-lock.json",
+    "build.mjs",
+    "mapping.json",
+}
 
 
 def fail(message):
