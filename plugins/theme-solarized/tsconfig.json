@@ -1,9 +1,0 @@
-{
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "paths": {
-      "notable-plugin-api": ["../../types/notable-plugin-api.d.ts"]
-    }
-  },
-  "include": ["src/**/*.ts"]
-}

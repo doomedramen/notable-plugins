@@ -22,7 +22,9 @@ EXCLUDED_PARTS = {
     "dist",
     "node_modules",
     "__pycache__",
-    # TypeScript build inputs - only the bundled `entry` ships.
+    # TypeScript build inputs - only the bundled `entry` ships. The build
+    # config itself lives at the repo root (package.json, tsconfig.json,
+    # build.mjs); these entries only matter for per-plugin leftovers.
     "src",
     "tsconfig.json",
     "package.json",

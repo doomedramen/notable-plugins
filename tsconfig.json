@@ -7,6 +7,10 @@
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "isolatedModules": true
-  }
+    "isolatedModules": true,
+    "paths": {
+      "notable-plugin-api": ["./types/notable-plugin-api.d.ts"]
+    }
+  },
+  "include": ["plugins/*/src/**/*.ts"]
 }

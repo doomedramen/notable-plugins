@@ -25,22 +25,26 @@ copy of `frontend/src/plugin-api/index.ts` from the `doomedramen/notable`
 repository — refresh it with `scripts/sync-plugin-api-types.sh` when the host
 API changes).
 
-Each plugin has:
+The build config is shared at the repo root (same convention as Notable's
+`core-plugins`):
 
+- root `package.json` / `tsconfig.json` / `build.mjs` - `npm install` once,
+  then `npm run build` type-checks every `plugins/<id>/src/main.ts` against
+  the vendored types and bundles each to `plugins/<id>/main.js` with esbuild,
+  marking `@codemirror/*` and `yjs` external (read shared host modules from
+  `api.modules` rather than bundling your own)
+
+Each plugin directory only needs:
+
+- `manifest.json` pointing `entry` at `main.js`
 - `src/main.ts` - the plugin source, importing types from
   `notable-plugin-api`
-- `tsconfig.json` - extends the shared `tsconfig.base.json` and maps
-  `notable-plugin-api` to the vendored types
-- `package.json` / `build.mjs` - `npm run build` type-checks `src/main.ts`
-  and bundles it to `main.js` with esbuild, marking `@codemirror/*` and `yjs`
-  external (same convention as Notable core plugins — read shared host
-  modules from `api.modules` rather than bundling your own)
+- any runtime assets (themes, icon packs, etc.)
 
-`manifest.json` still points `entry` at `main.js`. Built `main.js` files are
-git-ignored; CI builds them (`npm --prefix plugins/<id> ci && npm --prefix
-plugins/<id> run build`) before packaging. The packaged `.tar.gz` excludes
-`src/`, `tsconfig.json`, `package.json`, `package-lock.json`, and `build.mjs`
-— only the bundled `entry` and runtime assets ship.
+Built `main.js` files are git-ignored; CI runs `npm ci && npm run build` at
+the repo root before packaging. The packaged `.tar.gz` excludes `src/`,
+`tsconfig.json`, `package.json`, `package-lock.json`, and `build.mjs` — only
+the bundled `entry` and runtime assets ship.
 
 Minimal manifest:
 

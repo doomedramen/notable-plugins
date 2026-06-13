@@ -21,11 +21,8 @@ jobs:
       - name: Build plugin sources
         run: |
           set -euo pipefail
-          for directory in plugins/*/; do
-            [ -f "${directory}package.json" ] || continue
-            npm --prefix "$directory" ci
-            npm --prefix "$directory" run build
-          done
+          npm ci
+          npm run build
 
       - name: Package plugins and generate registry
         env:
