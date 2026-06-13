@@ -1,0 +1,11 @@
+{
+  "id": "icons-tabler",
+  "name": "Tabler icons",
+  "version": "1.0.0",
+  "description": "A searchable Tabler icon pack and complete Notable app icon theme.",
+  "entry": "main.js",
+  "apiVersion": 2,
+  "categories": ["icons"],
+  "author": "Paweł Kuna and Tabler contributors",
+  "homepage": "https://tabler.io/icons"
+}

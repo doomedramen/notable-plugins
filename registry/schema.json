@@ -16,6 +16,8 @@
           "description",
           "author",
           "homepage",
+          "apiVersion",
+          "categories",
           "package"
         ],
         "additionalProperties": false,
@@ -43,6 +45,18 @@
           "homepage": {
             "type": "string",
             "format": "uri"
+          },
+          "apiVersion": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "categories": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            }
           },
           "package": {
             "type": "object",

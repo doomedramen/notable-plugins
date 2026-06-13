@@ -1,0 +1,11 @@
+{
+  "id": "theme-nord",
+  "name": "Nord theme",
+  "version": "1.0.0",
+  "description": "A configurable Notable theme based on the Nord color palette.",
+  "entry": "main.js",
+  "apiVersion": 2,
+  "categories": ["theme"],
+  "author": "Arctic Ice Studio and Sven Greb",
+  "homepage": "https://github.com/nordtheme/nord"
+}

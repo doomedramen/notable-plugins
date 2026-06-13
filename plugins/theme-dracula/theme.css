@@ -1,0 +1,53 @@
+:root {
+  --background: #f8f8f2;
+  --surface: #ffffff;
+  --surface-hover: #eeeef4;
+  --surface-active: #e4e4ec;
+  --border: #dedee8;
+  --border-strong: #6272a4;
+  --foreground: #282a36;
+  --muted: #505466;
+  --faint: #7b8099;
+  --accent: #7c4dcc;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(124, 77, 204, 0.13);
+  --danger: #d6336c;
+  --success: #2f9e44;
+  --warning: #d97706;
+  --theme-density: 1;
+  --radius-sm: calc(var(--radius) * 0.75);
+}
+
+[data-theme="dark"] {
+  --background: #282a36;
+  --surface: #21222c;
+  --surface-hover: #343746;
+  --surface-active: #44475a;
+  --border: #343746;
+  --border-strong: #6272a4;
+  --foreground: #f8f8f2;
+  --muted: #c8c8d0;
+  --faint: #7f849c;
+  --accent: #bd93f9;
+  --accent-foreground: #282a36;
+  --accent-soft: rgba(189, 147, 249, 0.16);
+  --danger: #ff5555;
+  --success: #50fa7b;
+  --warning: #f1fa8c;
+}
+
+.cm-line {
+  line-height: calc(1.6 * var(--theme-density));
+}
+
+.ui-dialog,
+.ui-popover,
+button,
+input,
+select {
+  border-radius: var(--radius);
+}
+
+[data-testid="sidebar"] nav button {
+  min-height: calc(1.75rem * var(--theme-density));
+}

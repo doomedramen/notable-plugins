@@ -1,0 +1,11 @@
+{
+  "name": "notable-icons-phosphor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@iconify-json/ph": "1.2.2"
+  }
+}

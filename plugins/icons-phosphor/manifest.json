@@ -1,0 +1,11 @@
+{
+  "id": "icons-phosphor",
+  "name": "Phosphor icons",
+  "version": "1.0.0",
+  "description": "A searchable Phosphor icon pack and complete Notable app icon theme.",
+  "entry": "main.js",
+  "apiVersion": 2,
+  "categories": ["icons"],
+  "author": "Phosphor Icons",
+  "homepage": "https://phosphoricons.com"
+}

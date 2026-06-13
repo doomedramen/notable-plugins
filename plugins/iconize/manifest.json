@@ -1,0 +1,11 @@
+{
+  "id": "iconize",
+  "name": "Iconize",
+  "version": "1.0.0",
+  "description": "Assigns searchable icon-pack or emoji icons to notes and folders.",
+  "entry": "main.js",
+  "apiVersion": 2,
+  "categories": ["icons"],
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}

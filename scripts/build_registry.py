@@ -73,6 +73,17 @@ def load_manifest(directory):
         fail(f"{directory.name}: id must match its lowercase hyphenated directory")
     if not VERSION_PATTERN.fullmatch(manifest["version"]):
         fail(f"{directory.name}: version must be semantic")
+    api_version = manifest.get("apiVersion", 1)
+    if not isinstance(api_version, int) or api_version < 1:
+        fail(f"{directory.name}: apiVersion must be a positive integer")
+    categories = manifest.get("categories", [])
+    if not isinstance(categories, list) or any(
+        not isinstance(category, str) or not ID_PATTERN.fullmatch(category)
+        for category in categories
+    ):
+        fail(f"{directory.name}: categories must be lowercase hyphenated ids")
+    if len(categories) != len(set(categories)):
+        fail(f"{directory.name}: categories must be unique")
     homepage = urlparse(manifest["homepage"])
     if homepage.scheme not in {"http", "https"} or not homepage.netloc:
         fail(f"{directory.name}: homepage must be an HTTP(S) URL")
@@ -102,6 +113,8 @@ def main():
                 "description": manifest["description"],
                 "author": manifest["author"],
                 "homepage": manifest["homepage"],
+                "apiVersion": manifest.get("apiVersion", 1),
+                "categories": manifest.get("categories", []),
                 "package": {
                     "url": (
                         f"https://github.com/{REPOSITORY}/releases/download/"

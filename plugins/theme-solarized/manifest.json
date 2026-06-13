@@ -1,0 +1,11 @@
+{
+  "id": "theme-solarized",
+  "name": "Solarized theme",
+  "version": "1.0.0",
+  "description": "A configurable Solarized light and dark theme.",
+  "entry": "main.js",
+  "apiVersion": 2,
+  "categories": ["theme"],
+  "author": "Ethan Schoonover",
+  "homepage": "https://github.com/altercation/solarized"
+}
