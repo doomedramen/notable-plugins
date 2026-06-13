@@ -1,0 +1,9 @@
+{
+  "id": "homepage",
+  "name": "Homepage",
+  "version": "1.0.0",
+  "description": "Opens a chosen note from a command or when the app starts.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}

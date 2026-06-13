@@ -47,6 +47,8 @@ The generated files are written to `dist/`.
 
 - **Copy note link** - copies a wiki link to the active note
 - **Daily notes** - opens or creates today's note
+- **Homepage** - opens a chosen note on command or app startup
 - **Insert date and time** - inserts local date/time values from commands
 - **Random note** - opens a random vault note
 - **Reading time** - estimates reading time in the status bar
+- **Templates** - inserts reusable note templates with dynamic variables

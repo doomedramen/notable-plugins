@@ -1,0 +1,9 @@
+{
+  "id": "templates",
+  "name": "Templates",
+  "version": "1.0.0",
+  "description": "Inserts reusable note templates with date, title, and selection variables.",
+  "entry": "main.js",
+  "author": "Notable community",
+  "homepage": "https://github.com/doomedramen/notable-plugins"
+}
